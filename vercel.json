@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/PahuCare/final/index.html"
+      "destination": "/PahuCare/final/login.html"
     },
     {
       "source": "/(.*)",
