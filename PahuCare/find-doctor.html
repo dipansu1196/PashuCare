@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Doctor - Pashu Care</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="find-doctor-page">
+    <!-- Header Section -->
+    <header class="find-doctor-header">
+        <div class="logoimg"><img src="" alt=""></div>
+        <div class="logo">Pashu Care</div>
+        <nav class="find-doctor-nav">
+            <a href="index.html">होम</a>
+            <a href="find-doctor.html" class="active">डॉक्टर खोजें</a>
+            <a href="emergency-help.html">आपातकालीन सहायता</a>
+            <a href="contact.html">संपर्क करें</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="find-doctor-main">
+        <!-- Hero Section -->
+        <section class="find-doctor-hero">
+            <h1 class="find-doctor-title">अपने पास के पशु चिकित्सक खोजें</h1>
+            <p class="find-doctor-subtitle">विश्वसनीय पशु चिकित्सकों से तुरंत सहायता प्राप्त करें</p>
+        </section>
+
+        <!-- Search Section -->
+        <section class="find-doctor-search" id="find-doctor-section">
+            <div class="search-options" id="doctor-search-options">
+                <div class="location-wrapper">
+                    <!-- Auto Location Section -->
+                    <div class="auto-location-section">
+                        <button class="current-location-btn" onclick="getLocation()">
+                            वर्तमान स्थान का उपयोग करें
+                        </button>
+                        <div class="loading-spinner" id="loading-spinner"></div>
+                        <div class="location-error" id="location-error"></div>
+                        <div class="location-success" id="location-success"></div>
+                    </div>
+            
+                    <!-- Manual Location Section -->
+                    <div class="manual-location-section">
+                        <input type="text" 
+                               id="location-input" 
+                               class="location-input" 
+                               placeholder="शहर या पिन कोड दर्ज करें">
+                    </div>
+            
+                    <!-- Coordinates Display -->
+                    <div class="coordinates-display" id="coordinates-display">
+                        <p id="latitude"></p>
+                        <p id="longitude"></p>
+                        <p id="accuracy"></p>
+                    </div>
+
+                    <!-- Specialization and Search -->
+                    <div class="search-filters">
+                        <select class="specialization-select" id="specialization-select">
+                            <option value="">विशेषज्ञता चुनें</option>
+                            <option value="general">सामान्य पशु चिकित्सक</option>
+                            <option value="surgery">पशु सर्जन</option>
+                            <option value="dental">पशु दंत चिकित्सक</option>
+                        </select>
+                        <button class="search-button" onclick="searchDoctors()">खोजें</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results" class="find-doctor-results">
+            <h2 class="results-title">डॉक्टर्स की सूची</h2>
+            <div class="doctors-grid" id="doctors-grid">
+                <!-- Doctor cards will be dynamically added here -->
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="assets/doctor1.jpg" alt="डॉ. राजेश शर्मा">
+                    </div>
+                    <div class="doctor-info">
+                        <h3>डॉ. राजेश शर्मा</h3>
+                        <p class="specialization">सामान्य पशु चिकित्सक</p>
+                        <p class="experience">अनुभव: 15 वर्ष</p>
+                        <p class="location">लोकेशन: दिल्ली</p>
+                        <div class="contact-buttons">
+                            <button class="appointment-btn">अपॉइंटमेंट बुक करें</button>
+                            <button class="call-btn">कॉल करें</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+
+    <!-- Scripts -->
+    <script src="location.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>

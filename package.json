@@ -1,0 +1,29 @@
+{
+  "name": "pashucare",
+  "version": "1.0.0",
+  "description": "Veterinary Care Platform for Livestock and Pet Owners",
+  "main": "PahuCare/final/index.html",
+  "scripts": {
+    "start": "serve PahuCare/final",
+    "build": "xcopy PahuCare\\final public /E /I /Y || cp -r PahuCare/final public",
+    "dev": "serve PahuCare/final -p 3000"
+  },
+  "keywords": [
+    "veterinary",
+    "livestock",
+    "healthcare",
+    "ai",
+    "emergency",
+    "india"
+  ],
+  "author": "PashuCare Team",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dipansu1196/PashuCare.git"
+  },
+  "homepage": "https://pashucare.vercel.app"
+}

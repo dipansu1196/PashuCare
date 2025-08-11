@@ -1,0 +1,874 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+/* Header Styles */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Styles */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+/* Navigation Styles */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.nav-links a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+
+    .header-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .nav-links a {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Optional: Add smooth transition for mobile menu */
+@media (max-width: 768px) {
+    .nav-links {
+        width: 100%;
+        transition: all 0.3s ease;
+    }
+}
+
+/* Optional: Add hover effects */
+.logo-container:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover {
+    transform: translateY(-2px);
+}
+
+/* Optional: Add active state animation */
+.nav-links a.active {
+    position: relative;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #4CAF50;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-links a.active:hover::after {
+    transform: scaleX(1);
+}
+
+/* Optional: Add sticky header effect */
+header {
+    transition: all 0.3s ease;
+}
+
+header.sticky {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+}
+
+/* Optional: Add mobile menu button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+/* Hero Section */
+.hero {
+    background: url('buffalo-cow.jpg') no-repeat center center/cover;
+    height: 80vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    flex: 1;
+    font-size: 1em;
+    border-radius: 4px 0 0 4px;
+}
+
+.search-bar button {
+    padding: 10px 15px;
+    background-color: #ff7043;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 0 4px 4px 0;
+}
+
+/* Results Section */
+.results-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.results-section h2 {
+    margin-bottom: 20px;
+}
+
+.vet-info {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+
+.location-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.location-toggle button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(90deg, #187bcd 0%, #0f5187 100%);
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.location-toggle button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(90deg, #1a8ae6 0%, #1266a9 100%);
+}
+
+.location-toggle button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Style for the active/selected button */
+.location-toggle button.active {
+    background: linear-gradient(90deg, #156bb0 0%, #0d4570 100%);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}            input[type="text"] {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 2px solid #4CAF50;
+    border-radius: 25px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #45a049;
+    box-shadow: 0 0 8px rgba(76,175,80,0.4);
+}
+
+.search-bar button {
+    width: 25%;
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    color: white;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.search-bar button:hover {
+    background: linear-gradient(45deg, #45a049, #4CAF50);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+/* Colors for Pashu Care theme */
+:root {
+    --primary-color: #4CAF50; /* Green, representing nature and animals */
+    --secondary-color: #FFA000; /* Warm orange, friendly and inviting */
+    --text-color: #333333;
+    --background-color: #F5F5F5;
+    --accent-color: #8BC34A; /* Light green for accents */
+}
+
+/* General styles */
+body.find-doctor-page {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header styles */
+.find-doctor-header {
+    background-color: var(--primary-color);
+    padding: 1rem;
+}
+
+.find-doctor-header .logo {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.find-doctor-header nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+/* Find Doctor section styles */
+#find-doctor-section {
+    padding: 2rem;
+}
+
+.find-doctor-title {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Search options styles */
+#doctor-search-options {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.location-toggle button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-bar input, .search-bar select {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Results section styles */
+.find-doctor-results {
+    margin-top: 2rem;
+}
+
+/* Map section styles */
+#find-doctor-map-section {
+    margin-top: 2rem;
+}
+
+/* Footer styles */
+.find-doctor-footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .find-doctor-header nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .find-doctor-header nav a {
+        margin-bottom: 0.5rem;
+    }
+
+    #doctor-search-options {
+        padding: 0.5rem;
+    }
+
+    .location-toggle, .search-bar {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .location-toggle button, .search-bar input, .search-bar select, .search-bar button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+/* Spacing for search options */
+.location-toggle {
+    margin-bottom: 30px; /* Increased gap after location buttons */
+}
+
+.search-bar {
+    margin-bottom: 25px; /* Gap after search bar */
+    display: flex;
+    gap: 15px; /* Gap between search input and button */
+}
+
+/* Doctor type selection styling */
+.doctor-type-selection {
+    margin-top: 25px; /* Gap before doctor type selection */
+}
+
+/* Enhanced input styling */
+input[type="text"] {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 2px solid #4CAF50;
+    border-radius: 25px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #45a049;
+    box-shadow: 0 0 8px rgba(76,175,80,0.4);
+}
+/* Enhanced Navigation Bar Styles */
+.find-doctor-header {
+    background: linear-gradient(to right, #4CAF50, #45a049);
+    padding: 20px 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.nav-links a.active {
+    background-color: #FFA000;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.contact-button {
+    background-color: #FFA000;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.contact-button:hover {
+    background-color: white;
+    color: #FFA000;
+    border-color: #FFA000;
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.dropdown-content a {
+    color: #333 !important;
+    padding: 12px 20px !important;
+    display: block;
+    border-radius: 0 !important;
+    font-size: 14px !important;
+}
+
+.dropdown-content a:hover {
+    background-color: #f5f5f5 !important;
+    color: #4CAF50 !important;
+    transform: translateX(5px) !important;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .nav-links {
+        gap: 15px;
+    }
+    
+    .nav-links a {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to bottom, #4CAF50, #45a049);
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .dropdown-content {
+        position: static;
+        background-color: rgba(255, 255, 255, 0.1);
+        box-shadow: none;
+    }
+
+    .contact-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.location-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.location-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.location-suggestions li {
+    padding: 10px 15px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.location-suggestions li:hover {
+    background-color: #f5f5f5;
+}
+
+.loading-spinner {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Location related styles */
+.location-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.auto-location-section {
+    margin-bottom: 15px;
+}
+
+.current-location-btn {
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    width: auto;
+    min-width: 200px;
+}
+
+.current-location-btn:hover {
+    background: linear-gradient(45deg, #45a049, #4CAF50);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.loading-spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #4CAF50;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    right: 120px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@keyframes spin {
+    0% { transform: translateY(-50%) rotate(0deg); }
+    100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+.location-error {
+    color: #ff0000;
+    margin-top: 10px;
+    display: none;
+    text-align: center;
+    font-size: 14px;
+}
+
+.location-success {
+    color: #4CAF50;
+    margin-top: 10px;
+    display: none;
+    text-align: center;
+    font-size: 14px;
+}
+
+.coordinates-display {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    display: none;
+    font-size: 14px;
+}
+
+.coordinates-display p {
+    margin: 5px 0;
+    color: #333;
+}
+
+.manual-location-section {
+    margin-top: 15px;
+}
+
+.location-input {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid #4CAF50;
+    border-radius: 25px;
+    font-size: 16px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.location-input:focus {
+    outline: none;
+    border-color: #45a049;
+    box-shadow: 0 0 8px rgba(76,175,80,0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .current-location-btn {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .loading-spinner {
+        right: 20px;
+    }
+}
+
+
+.cards-section {
+    text-align: center;
+    padding: 20px;
+
+}
+
+.cards-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.cards-section p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    
+}
+
+.card {
+    
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 300px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
+}
+
+.find-doctor-nav a {
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+}
+
+.nav-links {
+    display: flex;
+    gap: 50px;  /* Increase this value for more spacing between links */
+    align-items: center;
+}
+
+/* Additional spacing for the anchor tags themselves */
+.nav-links a {
+    padding: 12px 25px;  /* Increase padding around the text */
+    margin: 0 10px;      /* Add margin between links */
+}
+
+/* For dropdown items if you have any */
+.dropdown-content a {
+    padding: 15px 25px !important;  /* More padding for dropdown items */
+    margin: 5px 0;                  /* Vertical spacing between dropdown items */
+}
+
+.imgface img{
+    height: 50px;
+}

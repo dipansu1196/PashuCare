@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pashu Care - Find Veterinary Care for Buffaloes and Cows</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">Pashu Care</div>
+        <nav>
+            <a href="#" onclick="navigateTo('index.html')">होम</a>
+            <a href="#" onclick="navigateTo('find-doctor.html')">डॉक्टर खोजें</a>
+            <a href="#" onclick="navigateTo('emergency-help.html')">आपातकालीन सहायता</a>
+            <a href="#" onclick="navigateTo('contact.html')">संपर्क करें</a>
+        </nav>
+    </header>
+
+    
+    <section class="hero">
+        <h1>अपने पशुओं के लिए भरोसेमंद चिकित्सा सेवा खोजें</h1>
+        <div class="imgface"><img src="assests/cowface3.png" alt=""></div>
+        <!-- <p>अपने इलाके के पशु चिकित्सकों से तुरंत संपर्क करें।</p> -->
+        
+       
+        <div class="location-toggle">
+            <button onclick="setMode('auto')">स्वचालित स्थान</button>
+            <button onclick="setMode('manual')">स्थान दर्ज करें</button>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" id="location-input" placeholder="अपना स्थान दर्ज करें..." disabled>
+            <button onclick="findNearbyVets()">डॉक्टर खोजें</button>
+        </div>
+        
+
+    <section id="results" class="results-section" style="display:none;">
+        <h2>निकटतम डॉक्टर</h2>
+        <div id="doctor-list"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Pashu Care. सभी अधिकार सुरक्षित।</p>
+        <p>संपर्क करें: <a href="mailto:support@pashucare.com">support@pashucare.com</a></p>
+    </footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+    <script src="script.js"></script>
+</body>
+</html>
